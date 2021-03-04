@@ -47,6 +47,7 @@ function Dogs({ onDogClick }) {
 }
 
 function App() {
+  const [dogEmoji, setDogEmoji] = useState('🐕‍🦺');
   const [number, setNumber] = useState(1);
   
   const calculateFibonaci = (num) => {
@@ -61,6 +62,12 @@ function App() {
     <div className="App">
       <h1>Fibonacci Dogs</h1>
         <div className="fibonacci">
+          <span 
+            className="emoji"
+            onClick={() => setDogEmoji(dogEmoji === '🐕‍🦺' ? '🐩' : '🐕‍🦺')}
+          >
+            {dogEmoji}
+          </span>
           <div>
             <button onClick={() => setNumber(number - 1)}>-</button>
             <button onClick={() => setNumber(number + 1)}>+</button>
